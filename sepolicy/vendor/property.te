@@ -1,2 +1,5 @@
+# Power HAL
+type power_prop, property_type;
+
 # Xiaomi
 vendor_public_prop(vendor_xiaomi_prop);
