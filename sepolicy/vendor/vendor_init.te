@@ -21,3 +21,4 @@ get_prop(vendor_init, vendor_xiaomi_prop)
 
 allow vendor_init proc_dirty:file w_file_perms;
 allow vendor_init proc_dirty_ratio:file w_file_perms;
+allow vendor_init proc_sysctl_autogroup:file w_file_perms;
