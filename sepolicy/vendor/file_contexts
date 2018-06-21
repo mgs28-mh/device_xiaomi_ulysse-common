@@ -26,7 +26,7 @@
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.lights-service\.xiaomi_ulysse               u:object_r:hal_light_default_exec:s0
-/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.2-service\.ulysse-libperfmgr       u:object_r:hal_power_default_exec:s0
+/(vendor|system/vendor)/bin/hw/android\.hardware\.power@1\.3-service\.ulysse-libperfmgr       u:object_r:hal_power_default_exec:s0
 
 # sysfs - iio
 /sys/bus/iio/devices(/.*)?			u:object_r:sysfs_iio:s0
