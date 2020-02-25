@@ -160,6 +160,9 @@ persist.vendor.data.mode=concurrent
 # Perf
 ro.vendor.perf.scroll_opt=true
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.dbg.volte_avail_ovr=1
