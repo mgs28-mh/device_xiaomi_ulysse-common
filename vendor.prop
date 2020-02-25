@@ -166,6 +166,9 @@ persist.vendor.data.mode=concurrent
 # QC framework value-adds
 ro.vendor.qti.va_aosp.support=1
 
+# Perf
+ro.vendor.extension_library=libqti-perfd-client.so
+
 # Radio
 DEVICE_PROVISIONED=1
 persist.dbg.volte_avail_ovr=1
