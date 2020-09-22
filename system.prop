@@ -25,3 +25,8 @@ persist.sys.sf.disable_blurs=1
 
 # Servicetracker
 ro.vendor.qti.servicetracker.disable=true
+
+# ZRAM
+ro.zram.mark_idle_delay_mins=60
+ro.zram.first_wb_delay_mins=180
+ro.zram.periodic_wb_delay_hours=24
