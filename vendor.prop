@@ -43,6 +43,8 @@ bluetooth.hfp.client=1
 persist.vendor.btstack.enable.splita2dp=false
 persist.vendor.qcom.bluetooth.enable.splita2dp=false
 qcom.bluetooth.soc=smd
+ro.bluetooth.library_name=libbluetooth_qti.so
+persist.vendor.btstack.enable.splita2dp=false
 ro.bluetooth.hfp.ver=1.7
 ro.qualcomm.bt.hci_transport=smd
 
