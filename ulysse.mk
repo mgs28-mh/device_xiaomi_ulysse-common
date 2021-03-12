@@ -239,6 +239,9 @@ PRODUCT_PACKAGES += \
     libqdMetaData \
     libgenlock \
     libtinyxml \
+    libqdMetaData \
+    libqdMetaData.vendor \
+    vendor.display.config@1.0.vendor \
     vendor.display.config@2.0
 
 # DRM
@@ -381,7 +384,8 @@ PRODUCT_PACKAGES += \
     libOmxSwVencHevc \
     libOmxVdec \
     libOmxVenc \
-    libstagefrighthw
+    libstagefrighthw \
+    libstagefright_enc_common
 
 # Power
 PRODUCT_PACKAGES += \
