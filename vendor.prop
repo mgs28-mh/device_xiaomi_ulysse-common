@@ -66,9 +66,6 @@ persist.vendor.dpm.loglevel=0
 ro.vendor.qti.core_ctl_min_cpu=2
 ro.vendor.qti.core_ctl_max_cpu=4
 
-# Coresight
-persist.debug.coresight.config=stm-events
-
 # Display
 debug.egl.hw=0
 debug.enable.sglscale=1
