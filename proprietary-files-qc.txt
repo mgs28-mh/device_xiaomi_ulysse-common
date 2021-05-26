@@ -364,18 +364,18 @@ vendor/lib64/libsdmextension.so|4e5ee8c59b518a5dbe1917c735c550a2fe2bd301
 vendor/lib64/libtinyxml2_1.so|92101861d95cbdf9625d192d0b2295baa5960b68
 
 # Adreno 3xx GPU Firmwares - from ASUS X00PD QKQ1.191002.002.WW_Phone-17.00.2003.23-20200401
-vendor/firmware/a300_pfp.fw
-vendor/firmware/a300_pm4.fw
-vendor/firmware/a330_pfp.fw
-vendor/firmware/a330_pm4.fw
+vendor/firmware/a300_pfp.fw|899dbfad4812084971cfc1ff30f06a4b45c2d34c
+vendor/firmware/a300_pm4.fw|94529206b45b6e9f6ed30dadabe4244a88a60975
+vendor/firmware/a330_pfp.fw|3e2fcee7276ded819cf2d95864fdd6788a484ee1
+vendor/firmware/a330_pm4.fw|ae739ea812f9e4462d7bba8b9ead5782d4496618
 
 # Adreno 5xx GPU Firmwares - from ASUS X00PD QKQ1.191002.002.WW_Phone-17.00.2003.23-20200401
-vendor/firmware/a506_zap.b00
-vendor/firmware/a506_zap.b01
-vendor/firmware/a506_zap.b02
-vendor/firmware/a506_zap.mdt
-vendor/firmware/a530_pfp.fw
-vendor/firmware/a530_pm4.fw
+vendor/firmware/a506_zap.b00|21d74ee137e4096c2ffcd6f2545b5b2f8f384efa
+vendor/firmware/a506_zap.b01|0c4b1d11ec36e8e944e020a7d75e53e9e208855d
+vendor/firmware/a506_zap.b02|3e301fa5905acd05f15836959595791c1241a017
+vendor/firmware/a506_zap.mdt|ec6c9965ed299b7fb51182f4a4f7d630d0ece4ba
+vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
+vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 
 # Keystore - from LA.UM.8.6.2.r1-08600-89xx.0
 vendor/lib/hw/keystore.msm8937.so|c56d3768e04fc180d844dbca94be8c27770e37d5
@@ -436,7 +436,7 @@ vendor/lib64/libvpplibrary.so|592e8d104185ab798e9730f510bdefb36323ad0a
 system_ext/lib/libqti-perfd-client_system.so|79be2c728553c6c065a82441a9b4f7a32384f862
 system_ext/lib/libqti_performance.so|23ac6a73d51d9a9a5c4e952d0d5cb44441e9df8b
 system_ext/lib64/libqti-perfd-client_system.so|6d77f53f2940bde26b3629035d7793e211d93d87
-system_ext/lib64/libqti_performance.so|49ffda3e601d39d13755aef0839617fa6bbf53
+system_ext/lib64/libqti_performance.so|49ffda3e601d39d13755aef0839617fa6bbf5306
 vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
 vendor/bin/hw/vendor.qti.hardware.perf@2.2-service|5d30808301c7e90cb70478f6f7e38ac593e8cfdf
 vendor/etc/init/vendor.qti.hardware.perf@2.2-service.rc|459b4c23550a56ac545f78c6d391f3d7dd9ba45b
@@ -566,7 +566,7 @@ vendor/bin/qti|28c5da423ba2e0c7873c24e6eca4bb4db7f41fe8
 vendor/bin/rmt_storage|68113b986cef176c9d808fb7fb870ed61d4846bd
 vendor/bin/tftp_server|05a9c0e0e691e534e703bded4a99083d25a26ebb
 vendor/etc/data/dsi_config.xml|2ca4b377905d97c38fdc58765ac9d1da99ef7385
-vendor/etc/data/netmgr_config.xml|cbc0330402aea93e8dd800a8ac3550ac3b1757e0
+vendor/etc/data/netmgr_config.xml|eb70c72162354651972044ffc2a697950a9fd6cf
 vendor/lib/libmdmdetect.so|11faf5c9ac48284dfe3a965d8a2309014d81a68d
 vendor/lib64/libconfigdb.so|1fa77478a72cf4152c1027fd40ee9a58a0ba89aa
 vendor/lib64/liblqe.so|63ed946d00ed73664410041e3e8fa8c2f5cbeeb6
@@ -713,7 +713,7 @@ vendor/lib/mediadrm/libwvdrmengine.so|1518cd1f541d12b58e637735c43d0bbde52e7da7
 vendor/lib64/mediadrm/libwvdrmengine.so|422e593d78f8f6abc148e1239e628bdfe04d9ddd
 
 # Wi-Fi - from ASUS X00PD QKQ1.191002.002.WW_Phone-17.00.2003.23-20200401
-vendor/bin/wcnss_service|a0be2e4c0e1291926aab50b0cf52e539f05fdda3
+vendor/bin/wcnss_service|42d6db361ceacb15eb6560cdc91dbda87ab7f7c5
 
 # WiFi Display (WFD) - from LA.UM.9.6.2.r1-03300-89xx.0
 bin/wfdservice|96a583c0efeaf90352b26c20c904ee156238b90f
