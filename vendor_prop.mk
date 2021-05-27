@@ -252,3 +252,10 @@ wifi.interface=wlan0
 # Zygote preforking
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.device_config.runtime_native.usap_pool_enabled=true
+
+# ADB on boot
+PRODUCT_PROPERTY_OVERRIDES += \
+persist.service.adb.enable=1 \
+persist.service.debuggable=1 \
+persist.sys.usb.config=mtp,adb \
+ro.adb.secure=0
