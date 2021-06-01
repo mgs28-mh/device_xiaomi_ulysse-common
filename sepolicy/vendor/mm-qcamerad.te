@@ -7,3 +7,4 @@ allow mm-qcamerad camera_socket:sock_file { create unlink write };
 allow mm-qcamerad sysfs_graphics:file r_file_perms;
 allow mm-qcamerad persist_sensors_file:file rw_file_perms;
 allow mm-qcamerad sysfs:file read;
+allow mm-qcamerad fwk_sensor_hwservice:hwservice_manager find;
