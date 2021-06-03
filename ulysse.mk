@@ -464,8 +464,7 @@ TARGET_BOARD_PLATFORM += msm8937
 TARGET_COMMON_QTI_COMPONENTS := \
     av \
     bt \
-    perf \
-    telephony
+    perf
 
 # Seccomp policy
 PRODUCT_COPY_FILES += \
