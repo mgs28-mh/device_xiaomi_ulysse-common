@@ -388,6 +388,10 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_enc_common
 
+# Non-fingerprint device patch
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/patch_blobs.sh:install/bin/patch_blobs.sh
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power.stats@1.0-service.mock \
