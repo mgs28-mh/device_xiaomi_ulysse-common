@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2017 The LineageOS Project
 #
@@ -233,7 +234,7 @@ PRODUCT_PACKAGES += \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
     libdisplayconfig \
-    libdisplayconfig.qti.vendor \
+    libdisplayconfig.qti \
     libqdMetaData.vendor \
     liboverlay \
     libqdMetaData \
