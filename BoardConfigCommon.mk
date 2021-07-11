@@ -29,7 +29,6 @@ TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := cortex-a53
 
-TARGET_BOARD_PLATFORM := msm8937
 TARGET_BOARD_PLATFORM_GPU := qcom-adreno505
 
 TARGET_BOARD_SUFFIX := _64
@@ -158,12 +157,6 @@ TARGET_FS_CONFIG_GEN := $(VENDOR_PATH)/config.fs
 DEVICE_FRAMEWORK_MANIFEST_FILE := $(VENDOR_PATH)/framework_manifest.xml
 DEVICE_MANIFEST_FILE := $(VENDOR_PATH)/manifest.xml
 DEVICE_MATRIX_FILE   := $(VENDOR_PATH)/compatibility_matrix.xml
-
-ifeq ($(subst lineage_,,$(PRODUCT_NAME)),$(PRODUCT_DEVICE))
-DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest-lineage.xml
-else ifeq ($(subst rr_,,$(PRODUCT_NAME)),$(PRODUCT_DEVICE))
-DEVICE_MANIFEST_FILE += $(VENDOR_PATH)/manifest-lineage.xml
-endif
 
 # Init
 TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit_ulysse
