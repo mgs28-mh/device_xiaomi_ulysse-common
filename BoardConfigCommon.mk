@@ -1,3 +1,4 @@
+
 #
 # Copyright (C) 2017-2019 The LineageOS Project
 #
@@ -224,6 +225,7 @@ VENDOR_SECURITY_PATCH := 2020-03-05
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
+BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(VENDOR_PATH)/sepolicy/private
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
