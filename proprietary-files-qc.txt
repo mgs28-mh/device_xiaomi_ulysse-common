@@ -394,6 +394,9 @@ vendor/firmware/a506_zap.mdt|ec6c9965ed299b7fb51182f4a4f7d630d0ece4ba
 vendor/firmware/a530_pfp.fw|d027c70fde64241ec13160d09ee1b6c272974a4b
 vendor/firmware/a530_pm4.fw|b1cf625b5552b99839687f479c124ac5daca2ca2
 
+# IRQ balance - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/bin/msm_irqbalance|c0910fb319bb8287f176f26078241299455baad0
+
 # Keystore - from LA.UM.8.6.2.r1-08600-89xx.0
 vendor/lib/hw/keystore.msm8937.so|c56d3768e04fc180d844dbca94be8c27770e37d5
 vendor/lib64/hw/keystore.msm8937.so|9660e1c13a3589114cf18db58e5b3c3c9e14059b
@@ -462,30 +465,6 @@ vendor/bin/power_off_alarm|a22dad49a912473d92bf9c111ef7de6dd927b6f2
 vendor/etc/init/vendor.qti.hardware.alarm@1.0-service.rc|a03a9a1c818595b19272ea6ffb466e23a7fc3b05
 vendor/lib64/hw/vendor.qti.hardware.alarm@1.0-impl.so|0119fa4d87505bc5d9426ec8ffe56d9dd3bc9e4f
 vendor/lib64/vendor.qti.hardware.alarm@1.0.so|57d936014f89811481712ac7a08d104b85b636b5
-
-# Poweroff charger - from riva
-vendor/bin/chargeonlymode|3a777c1aec821afb8ce80e063a9145ca79ec9bd1
-vendor/res/charger/battery_fail.png|0e65ec2d5f21ecf03d3ea7e1c1b821a7ebee1728
-vendor/res/charger/battery_image_0.png|0321a7788357f53abc8caab751a301b1c9203207
-vendor/res/charger/battery_image_1.png|f06b201ffe9ab2659ff357da5e354a957b2519ca
-vendor/res/charger/battery_image_2.png|691b620342a1b758493cabe0ec82386318524f7c
-vendor/res/charger/battery_image_3.png|0ef8ee64012170b1b4be4d7202e9091acdcc87d0
-vendor/res/charger/battery_image_4.png|81e57f29bd909e2e61ab84d795b83dc940193807
-vendor/res/charger/battery_image_5.png|35da54dbe040ba65a1097a0175569709164d5b3b
-vendor/res/charger/battery_image_6.png|a09c13d71db50547551dd16793e7692efc297b3f
-vendor/res/charger/battery_image_7.png|fa82e39c33533e4247f7c0d1247dab47c65a8c1d
-vendor/res/charger/battery_num_0.png|394835f6695295d80d7b1836d5dc6e2d4ce824af
-vendor/res/charger/battery_num_10.png|b2681ea496acc048473428b443acaf7aca6ea897
-vendor/res/charger/battery_num_1.png|aabc0ecdc09755484b18fc3ece19c95bff1af770
-vendor/res/charger/battery_num_2.png|d4e89a5e3dc25e6ed9f01106707be96e2fc09c03
-vendor/res/charger/battery_num_3.png|8b19580372b5076edfaf592f2e2182fa1031d677
-vendor/res/charger/battery_num_4.png|e9d627737b2d0efa0be65db365cdb8a8672ecffe
-vendor/res/charger/battery_num_5.png|c7bf6b88490793dcd916784703046806b33b2218
-vendor/res/charger/battery_num_6.png|e76a466583d23c8e5851b00d284a6d9db9843568
-vendor/res/charger/battery_num_7.png|d31e6112790aef5fd10a84d7f23cc318f699fdb5
-vendor/res/charger/battery_num_8.png|602dd97e82b65cf17dfb764d56fa659a6eb4a5d8
-vendor/res/charger/battery_num_9.png|e782f4be101ce87298286e55d32c09deed514393
-vendor/res/charger/battery_scale.png|84066970c9fe65be5e5e752e225ce07698147a36
 
 # QMI - from Tissot PKQ1.180917.001.V10.0.17.0.PDHMIXM
 lib64/libdiag_system.so:system_ext/lib64/libdiag_system.so|811c30efa526e8e3828b112487b1d203cca5ed6e
@@ -577,7 +556,7 @@ system_ext/etc/permissions/qcrilhook.xml|30397e293b2c40e6b7a1d11c2a615cdd05de625
 product/etc/permissions/telephony_product_privapp-permissions-qti.xml|42f4553b61731e56d253766554d4479519cea3ff
 system_ext/etc/permissions/telephony_system-ext_privapp-permissions-qti.xml|4f0056403f56928b8c75a617ba582f17061f89ae
 system_ext/etc/permissions/telephonyservice.xml|b7831598d3c19c6ce4ef431d1cc44d94c3c35a8d
-system_ext/framework/qti-telephony-common.jar|11d6b89b31a9bf65218b3676c2bbd296275b1932
+system_ext/framework/qti-telephony-common.jar|f299a07201e2ce4cd65d28faa3b9730746e201ae
 vendor/bin/adpl|ff3da13d82b8cf06b3e3b01fc3ddf6ddf0b8113d
 vendor/bin/port-bridge|54fb0045adb9673bf7daf8d9732728af2397754d
 vendor/etc/init/dataadpl.rc|cd4907d9bfd438fe5f5c86f5d6cec590ac0bac2a
