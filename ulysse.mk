@@ -15,8 +15,6 @@
 # limitations under the License.
 #
 
-$(call inherit-product, vendor/xiaomi/ulysse-common/ulysse-common-vendor.mk)
-
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
@@ -98,10 +96,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
     antradio_app
-
-# Device-specific Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
 
 # Audio
 PRODUCT_PACKAGES += \
@@ -586,3 +580,9 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
+
+# Inherit Dirac
+$(call inherit-product, vendor/xiaomi/dirac/dirac.mk)
+
+# Inherit proprietary-files
+$(call inherit-product, vendor/xiaomi/ulysse-common/ulysse-common-vendor.mk)
