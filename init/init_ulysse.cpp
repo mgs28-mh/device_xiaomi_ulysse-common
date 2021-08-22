@@ -170,7 +170,22 @@ void set_variant_props(const variant_info_t variant) {
     property_override("persist.ov16885.flash.light","275");
 }
 
+static const char *build_keys_props[] =
+{
+    "ro.build.tags",
+    "ro.odm.build.tags",
+    "ro.product.build.tags",
+    "ro.system.build.tags",
+    "ro.system_ext.build.tags",
+    "ro.vendor.build.tags",
+    nullptr
+};
+
 void vendor_load_properties() {
     determine_device();
     set_dalvik_heap_size();
+    /* Spoof Build keys */
+    for (int i = 0; build_keys_props[i]; ++i) {
+		property_override(build_keys_props[i], "release-keys");
+	}
 }
