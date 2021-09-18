@@ -564,8 +564,8 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# Inherit Dirac
-$(call inherit-product, vendor/xiaomi/dirac/dirac.mk)
+# Inherit XiaomiParts
+$(call inherit-product, vendor/xiaomi/part/part.mk)
 
 # Inherit proprietary-files
 $(call inherit-product, vendor/xiaomi/ulysse-common/ulysse-common-vendor.mk)
