@@ -96,10 +96,6 @@ PRODUCT_PACKAGES += \
     AntHalService \
     antradio_app
 
-# Device-specific Settings
-PRODUCT_PACKAGES += \
-    XiaomiParts
-
 # Audio
 PRODUCT_PACKAGES += \
     android.hardware.audio@6.0-impl \
@@ -576,3 +572,6 @@ PRODUCT_BOOT_JARS += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
+
+# Inherit XiaomiParts
+$(call inherit-product, vendor/xiaomi/part/part.mk)
