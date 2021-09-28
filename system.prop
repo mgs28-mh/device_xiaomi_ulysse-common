@@ -22,3 +22,6 @@ ro.telephony.default_network=22,22
 
 # Blurs
 persist.sys.sf.disable_blurs=1
+
+# Servicetracker
+ro.vendor.qti.servicetracker.disable=true
