@@ -98,7 +98,7 @@ PRODUCT_PACKAGES += \
     libbt-logClient.so \
     audio.a2dp.default \
     audio.bluetooth.default \
-    android.hardware.bluetooth.audio@2.0-impl \
+    android.hardware.bluetooth.audio@2.1-impl \
     android.hardware.bluetooth.a2dp@1.0-impl \
     android.hardware.bluetooth.a2dp@1.0-service \
     libbt-vendor \
