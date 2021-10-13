@@ -6513,7 +6513,9 @@ int32_t QCamera2HardwareInterface::processHDRData(
         qcamera_callback_argm_t cbArg;
         memset(&cbArg, 0, sizeof(qcamera_callback_argm_t));
         cbArg.cb_type = QCAMERA_DATA_CALLBACK;
+#ifndef VANILLA_HAL
         cbArg.msg_type = CAMERA_MSG_META_DATA;
+#endif
         cbArg.data = hdrBuffer;
         cbArg.user_data = hdrBuffer;
         cbArg.cookie = this;
