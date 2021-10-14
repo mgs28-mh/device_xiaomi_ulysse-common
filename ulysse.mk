@@ -559,7 +559,4 @@ PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
 
-# Inherit XiaomiParts
-$(call inherit-product, vendor/xiaomi/part/part.mk)
-
 PRODUCT_VENDOR_KERNEL_HEADERS := device/xiaomi/ulysse-kernel/kernel-headers
