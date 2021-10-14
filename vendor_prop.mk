@@ -218,6 +218,11 @@ ro.telephony.use_old_mnc_mcc_format=true \
 service.qti.ims.enabled=1 \
 vendor.rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 
+# Soc
+PRODUCT_PROPERTY_OVERRIDES += \
+ro.soc.manufacturer=Qualcomm \
+ro.soc.model=MSM8937
+
 # Time Services
 PRODUCT_PROPERTY_OVERRIDES += \
 persist.timed.enable=true
