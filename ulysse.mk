@@ -389,8 +389,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     android.hardware.power-service-qti \
     android.hardware.power.stats@1.0-service.mock \
-    vendor.qti.hardware.perf@2.0.vendor \
-    vendor.qti.hardware.perf@2.1.vendor \
     vendor.qti.hardware.perf@2.2.vendor
 
 PRODUCT_COPY_FILES += \
@@ -500,8 +498,6 @@ $(call inherit-product, build/target/product/verity.mk)
 
 # VNDK
 PRODUCT_PACKAGES += \
-    vndk_package \
-    vndk-ext \
     libstdc++.vendor
 
 PRODUCT_COPY_FILES += \
