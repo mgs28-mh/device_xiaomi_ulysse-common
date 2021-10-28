@@ -1989,10 +1989,5 @@ vendor/firmware/cpp_firmware_v1_5_2.fw|58dd7f7c09dbb62bc6f334a8885064b292610675
 vendor/firmware/cpp_firmware_v1_6_0.fw|dcd3d1f904c7ee3d731f8f28b5f78f2503916ada
 vendor/firmware/cpp_firmware_v1_8_0.fw|26e2badbb4e3049243f0a176722f26879e7b87e8
 
-# Camera Hacks - from AOSP 12
-lib/libbinder.so:vendor/lib/vndk/libbinder.so|3d470cccd303835192fc7c967f41eb72295d7dd2
-lib/libcutils.so:vendor/lib/vndk-sp/libcutils.so|90921ab3accd56dfbaf6b1a05a13e4371a77dcb5
-lib64/libbinder.so:vendor/lib64/vndk/libbinder.so|516aa3276e941961d9fd9059ff9e477fe86d59db
-
 # Consumer IR - ugg 7.1.2 N2G47H V11.0.2.0.NDKMIXM
 vendor/lib64/hw/consumerir.default.so|0c7026fe6b1f3bbb4a41389cf8f9849c6a3202c6
