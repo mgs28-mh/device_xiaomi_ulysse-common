@@ -393,10 +393,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/powerhint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint.xml
 
-# Properties
--include device/xiaomi/ulysse-common/vendor_prop.mk
--include device/xiaomi/ulysse-common/product_prop.mk
-
 # QMI
 PRODUCT_PACKAGES += \
     libjson
