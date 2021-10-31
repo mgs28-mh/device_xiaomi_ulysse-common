@@ -211,6 +211,7 @@ VENDOR_SECURITY_PATCH := 2020-03-05
 # SELinux
 include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_VENDOR_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # Treble
 BOARD_PROPERTY_OVERRIDES_SPLIT_ENABLED := true
