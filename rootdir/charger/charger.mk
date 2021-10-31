@@ -18,4 +18,6 @@ PRODUCT_COPY_FILES += \
     device/xiaomi/ulysse-common/rootdir/charger/battery_num_7.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_num_7.png \
     device/xiaomi/ulysse-common/rootdir/charger/battery_num_8.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_num_8.png \
     device/xiaomi/ulysse-common/rootdir/charger/battery_num_9.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_num_9.png \
-    device/xiaomi/ulysse-common/rootdir/charger/battery_num_10.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_num_10.png
+    device/xiaomi/ulysse-common/rootdir/charger/battery_num_10.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_num_10.png \
+    device/xiaomi/ulysse-common/rootdir/charger/battery_fail.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_fail.png \
+    device/xiaomi/ulysse-common/rootdir/charger/battery_scale.png:$(TARGET_COPY_OUT_VENDOR)/res/charger/battery_scale.png
