@@ -65,3 +65,15 @@ cc_library {
         "dpm/strdup8to16.cpp",
     ],
 }
+
+// IMS
+cc_library_shared {
+    name: "libims-shim",
+    shared_libs: [
+        "libgui",
+        "libutils",
+    ],
+    srcs: [
+        "Surface.cpp"
+    ],
+}
