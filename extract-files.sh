@@ -96,4 +96,7 @@ patchelf --replace-needed libandroid.so libandroid_shim.so "$ANDROID_ROOT"/vendo
     patchelf --add-needed "libshim_wfd.so" "${2}"
     ;;
 
+# IMS
+"${PATCHELF}" --add-needed "libims-shim.so" "${DEVICE_BLOB_ROOT}"/system_ext/lib64/lib-imsvideocodec.so
+
 "$MY_DIR/setup-makefiles.sh"
