@@ -529,5 +529,3 @@ PRODUCT_COPY_FILES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
     hardware/xiaomi
-
-PRODUCT_VENDOR_KERNEL_HEADERS := device/xiaomi/ulysse-kernel/kernel-headers
