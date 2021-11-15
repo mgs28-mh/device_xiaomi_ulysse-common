@@ -223,4 +223,9 @@ void vendor_load_properties() {
     for (int i = 0; build_keys_props[i]; ++i) {
 		property_override(build_keys_props[i], "release-keys");
 	}
+
+    /* Custom Build Fingerprint */
+    set_ro_build_prop("fingerprint", "google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys");
+    property_override("ro.bootimage.build.fingerprint", "google/raven/raven:12/SD1A.210817.036/7805805:user/release-keys");
+    property_override("ro.build.description", "raven-user 12 SD1A.210817.036 7805805 release-keys");
 }
