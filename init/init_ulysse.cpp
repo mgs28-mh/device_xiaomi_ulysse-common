@@ -1,33 +1,9 @@
-/*
-   Copyright (c) 2016, The CyanogenMod Project
-   Copyright (c) 2019, The LineageOS Project
+// Copyright (C) 2019-2021 The LineageOS Project
+//
+// SPDX-License-Identifier: Apache-2.0
+//
 
-   Redistribution and use in source and binary forms, with or without
-   modification, are permitted provided that the following conditions are
-   met:
-    * Redistributions of source code must retain the above copyright
-      notice, this list of conditions and the following disclaimer.
-    * Redistributions in binary form must reproduce the above
-      copyright notice, this list of conditions and the following
-      disclaimer in the documentation and/or other materials provided
-      with the distribution.
-    * Neither the name of The Linux Foundation nor the names of its
-      contributors may be used to endorse or promote products derived
-      from this software without specific prior written permission.
-
-   THIS SOFTWARE IS PROVIDED "AS IS" AND ANY EXPRESS OR IMPLIED
-   WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF
-   MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT
-   ARE DISCLAIMED.  IN NO EVENT SHALL THE COPYRIGHT OWNER OR CONTRIBUTORS
-   BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
-   CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF
-   SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR
-   BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY,
-   WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE
-   OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN
-   IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
- */
-
+#include <android-base/file.h>
 #include <cstdlib>
 #include <fstream>
 #include <string.h>
@@ -41,55 +17,97 @@
 #include "vendor_init.h"
 #include "property_service.h"
 
+#include <string>
+#include <vector>
+
 using android::base::GetProperty;
 
-char const *heapstartsize;
-char const *heapgrowthlimit;
-char const *heapsize;
-char const *heapminfree;
-char const *heapmaxfree;
-char const *heaptargetutilization;
+std::vector<std::string> ro_props_default_source_order = {
+    "odm.",
+    "product.",
+    "system.",
+    "system_ext.",
+    "vendor.",
+    "",
+};
 
-int property_set(const char *key, const char *value) {
-    return __system_property_set(key, value);
-}
-
-void property_override(char const prop[], char const value[])
+void property_override(char const prop[], char const value[], bool add)
 {
-    prop_info *pi;
+    auto pi = (prop_info *) __system_property_find(prop);
 
-    pi = (prop_info*) __system_property_find(prop);
-    if (pi)
+    if (pi != nullptr) {
         __system_property_update(pi, value, strlen(value));
-    else
+    } else if (add) {
         __system_property_add(prop, strlen(prop), value, strlen(value));
+    }
 }
 
-void property_override_dual(char const system_prop[], char const vendor_prop[], char const value[])
+void set_ro_build_prop(const std::string &prop, const std::string &value, bool product) {
+    std::string prop_name;
+
+    for (const auto &source : ro_props_default_source_order) {
+        if (product)
+            prop_name = "ro.product." + source + prop;
+        else
+            prop_name = "ro." + source + "build." + prop;
+
+        property_override(prop_name.c_str(), value.c_str(), true);
+    }
+}
+
+typedef struct variant_info {
+    std::string brand;
+    std::string device;
+    std::string marketname;
+    std::string model;
+    std::string build_description;
+    std::string build_fingerprint;
+} variant_info_t;
+
+void search_variant(const std::vector<variant_info_t> variants);
+void set_variant_props(const variant_info_t variant);
+
+void property_override(char const prop[], char const value[], bool add = true);
+void set_dalvik_heap_size();
+void set_ro_build_prop(const std::string &prop, const std::string &value, bool product = false);
+
+static const variant_info_t ugglite_info = {
+    .brand = "xiaomi",
+    .device = "ugglite",
+    .marketname = "",
+    .model = "Redmi Note 5A",
+    .build_description = "ugglite-user 7.1.2 N2G47H V11.0.3.0.NDFMIXM release-keys",
+    .build_fingerprint = "xiaomi/ugglite/ugglite:7.1.2/N2G47H/V11.0.3.0.NDFMIXM:user/release-keys",
+};
+
+static const variant_info_t ugg_info = {
+    .brand = "xiaomi",
+    .device = "ugg",
+    .marketname = "",
+    .model = "Redmi Note 5A",
+    .build_description = "ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys",
+    .build_fingerprint = "xiaomi/ugg/ugg:7.1.2/N2G47H/V11.0.2.0.NDKMIXM:user/release-keys",
+};
+
+static void determine_device()
 {
-    property_override(system_prop, value);
-    property_override(vendor_prop, value);
+    std::string fdt_model;
+    android::base::ReadFileToString("/sys/firmware/devicetree/base/model", &fdt_model, true);
+    if (fdt_model.find("MSM8917") != fdt_model.npos)
+        set_variant_props(ugglite_info);
+    else if (fdt_model.find("MSM8940") != fdt_model.npos)
+        set_variant_props(ugg_info);
 }
 
-void set_device_ugglite()
-{
-    property_override_dual("ro.product.device", "ro.product.vendor.device", "ugglite");
-    property_override_dual("ro.product.model", "ro.product.vendor.model", "Redmi Note 5A Lite");
-    property_set("ro.xiaomi.device", "ugglite");
-    property_set("ro.xiaomi.series", "ulysse");
-}
-
-void set_device_ugg()
-{
-    property_override_dual("ro.product.device", "ro.product.vendor.device", "ugg");
-    property_override_dual("ro.product.model", "ro.product.vendor.model", "Redmi Note 5A Prime");
-    property_set("ro.xiaomi.device", "ugg");
-    property_set("ro.xiaomi.series", "ulysse");
-}
-
-void check_device()
+void set_dalvik_heap_size()
 {
     struct sysinfo sys;
+    char const *heapstartsize;
+    char const *heapgrowthlimit;
+    char const *heapsize;
+    char const *heapminfree;
+    char const *heapmaxfree;
+    char const *heaptargetutilization;
 
     sysinfo(&sys);
 
@@ -102,17 +120,14 @@ void check_device()
         heapminfree = "8m";
         heapmaxfree = "32m";
     } else if (sys.totalram > 3072ull * 1024 * 1024) {
-        // from - phone-xxhdpi-4096-dalvik-heap.mk
+        // from - phone-xhdpi-4096-dalvik-heap.mk
         heapstartsize = "8m";
-        heapgrowthlimit = "256m";
+        heapgrowthlimit = "192m";
         heapsize = "512m";
         heaptargetutilization = "0.6";
         heapminfree = "8m";
         heapmaxfree = "16m";
-
-        // set device name to ugg
-        set_device_ugg();
-    } else if (sys.totalram > 2048ull * 1024 * 1024) {
+    } else if (sys.totalram > 1024ull * 1024 * 1024) {
         // from - phone-xhdpi-2048-dalvik-heap.mk
         heapstartsize = "8m";
         heapgrowthlimit = "192m";
@@ -120,37 +135,42 @@ void check_device()
         heaptargetutilization = "0.75";
         heapminfree = "512k";
         heapmaxfree = "8m";
-
-        // set device name to ugg
-        set_device_ugg();
     } else {
-        // from - phone-xhdpi-2048-dalvik-heap.mk
+        // from - phone-xhdpi-1024-dalvik-heap.mk
         heapstartsize = "8m";
-        heapgrowthlimit = "192m";
-        heapsize = "512m";
+        heapgrowthlimit = "96m";
+        heapsize = "256m";
         heaptargetutilization = "0.75";
         heapminfree = "512k";
         heapmaxfree = "8m";
-
-        // set device name to ugglite
-        set_device_ugglite();
     }
+
+    property_override("dalvik.vm.heapstartsize", heapstartsize);
+    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_override("dalvik.vm.heapsize", heapsize);
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    property_override("dalvik.vm.heapminfree", heapminfree);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
 }
 
-void vendor_load_properties()
-{
-    check_device();
+void set_variant_props(const variant_info_t variant) {
+    set_ro_build_prop("brand", variant.brand, true);
+    set_ro_build_prop("device", variant.device, true);
+    set_ro_build_prop("marketname", variant.marketname, true);
+    set_ro_build_prop("model", variant.model, true);
 
-    property_set("dalvik.vm.heapstartsize", heapstartsize);
-    property_set("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
-    property_set("dalvik.vm.heapsize", heapsize);
-    property_set("dalvik.vm.heaptargetutilization", heaptargetutilization);
-    property_set("dalvik.vm.heapminfree", heapminfree);
-    property_set("dalvik.vm.heapmaxfree", heapmaxfree);
+    set_ro_build_prop("fingerprint", variant.build_fingerprint);
+    property_override("ro.bootimage.build.fingerprint", variant.build_fingerprint.c_str());
+    property_override("ro.build.description", variant.build_description.c_str());
 
-    // Front Flashlight
-    property_set("persist.s5k3p8sp.flash.low","320");
-    property_set("persist.s5k3p8sp.flash.light","300");
-    property_set("persist.ov16885.flash.low","290");
-    property_set("persist.ov16885.flash.light","275");
+    // Front Flashlight for Ugg
+    property_override("persist.s5k3p8sp.flash.low","320");
+    property_override("persist.s5k3p8sp.flash.light","300");
+    property_override("persist.ov16885.flash.low","290");
+    property_override("persist.ov16885.flash.light","275");
+}
+
+void vendor_load_properties() {
+    determine_device();
+    set_dalvik_heap_size();
 }
