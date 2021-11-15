@@ -170,6 +170,37 @@ void set_variant_props(const variant_info_t variant) {
     property_override("persist.ov16885.flash.light","275");
 }
 
+/* From Magisk@jni/magiskhide/hide_utils.c */
+static const char *cts_prop_key[] =
+        { "ro.boot.vbmeta.device_state", "ro.boot.verifiedbootstate", "ro.boot.flash.locked",
+          "ro.boot.veritymode", "ro.boot.warranty_bit", "ro.warranty_bit",
+          "ro.debuggable", "ro.secure", "ro.build.type", "ro.build.tags",
+          "ro.vendor.boot.warranty_bit", "ro.vendor.warranty_bit",
+          "vendor.boot.vbmeta.device_state", nullptr };
+
+static const char *cts_prop_val[] =
+        { "locked", "green", "1",
+          "enforcing", "0", "0",
+          "0", "1", "user", "release-keys",
+          "0", "0",
+          "locked", nullptr };
+
+static const char *cts_late_prop_key[] =
+        { "vendor.boot.verifiedbootstate", nullptr };
+
+static const char *cts_late_prop_val[] =
+        { "green", nullptr };
+
+static void workaround_cts_properties() {
+	// Hide all sensitive props
+	for (int i = 0; cts_prop_key[i]; ++i) {
+		property_override(cts_prop_key[i], cts_prop_val[i]);
+	}
+	for (int i = 0; cts_late_prop_key[i]; ++i) {
+		property_override(cts_late_prop_key[i], cts_late_prop_val[i]);
+	}
+}
+
 static const char *build_keys_props[] =
 {
     "ro.build.tags",
@@ -184,6 +215,7 @@ static const char *build_keys_props[] =
 void vendor_load_properties() {
     determine_device();
     set_dalvik_heap_size();
+    workaround_cts_properties();
     /* Spoof Build keys */
     for (int i = 0; build_keys_props[i]; ++i) {
 		property_override(build_keys_props[i], "release-keys");
