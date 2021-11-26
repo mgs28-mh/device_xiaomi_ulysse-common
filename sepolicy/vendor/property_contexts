@@ -12,3 +12,7 @@ vendor.powerhal.rendering      u:object_r:power_prop:s0
 
 # Xiaomi
 ro.vendor.xiaomi.	   u:object_r:vendor_xiaomi_prop:s0
+
+# vendor_radio_prop
+persist.vendor.data.shsusr_load                 u:object_r:vendor_radio_prop:s0
+persist.vendor.data.qmipriod_load               u:object_r:vendor_radio_prop:s0
