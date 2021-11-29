@@ -180,8 +180,8 @@ service ppd /vendor/bin/mm-pp-dpps
 on property:apexd.status=ready
     mount none /system/etc/swcodec/ld.config.txt /apex/com.android.media.swcodec/etc/ld.config.txt bind
 
-on property:ro.product.device=ugglite
+on property:ro.vendor.xiaomi.device=ugglite
     setprop vendor.usb.rndis.func.name "rndis"
 
-on property:ro.product.device=ugg
+on property:ro.vendor.xiaomi.device=ugg
     setprop vendor.usb.rndis.func.name "rndis_bam"
