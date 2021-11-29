@@ -7,6 +7,9 @@ type camera_socket, file_type, data_file_type;
 # DT2W
 type sysctl_dt2w, fs_type, proc_type;
 
+# FDT
+type fdt_model, fs_type, sysfs_type;
+
 # Powerstats
 type sysfs_iio_devices, fs_type, sysfs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;

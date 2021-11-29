@@ -22,3 +22,10 @@ allow init sysfs_batteryinfo:file setattr;
 allow init vendor_file:file execute;
 allow init blkio_device:file { create open read write mounton };
 dontaudit init sysfs:file { open setattr write };
+
+# Allow fdt model
+allow init fdt_model:dir r_dir_perms;
+allow init fdt_model:file r_file_perms;
+
+# Prop
+get_prop(init, vendor_xiaomi_prop)
