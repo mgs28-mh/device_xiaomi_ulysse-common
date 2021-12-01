@@ -747,6 +747,9 @@ vendor/lib64/vendor.qti.ims.rcsconfig@2.1.so|516268b5b3e044429f40b5101aa1f42563e
 vendor/lib64/vendor.qti.imsrtpservice@3.0-service-Impl.so|31759a9a5f6045b1139d00103044d9b55607eac1
 vendor/lib64/vendor.qti.imsrtpservice@3.0.so|25517caf74691b812320b46b477a3f4161cc1bcf
 
+# datastatusnotification - from LA.UM.8.6.2.r1-07600-89xx.0
+-system_ext/app/datastatusnotification/datastatusnotification.apk|4685df4bb2446950bcb37da83f4acefc69bfcdc3
+
 # RTP Libs - from vangogh:11/RKQ1.200826.002
 system_ext/lib/libmmrtpdecoder.so|e50c35366bd428ac29e8a828cfd6b22aa08a0a55
 system_ext/lib/libmmrtpencoder.so|5614934db1f7302b91abf5ed123132b346b24038
