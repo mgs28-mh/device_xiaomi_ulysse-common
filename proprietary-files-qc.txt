@@ -355,6 +355,10 @@ vendor/lib64/libsdm-diag.so|ba86907e54afb2d72ea7fe8492adfb872b6de9e3
 vendor/lib64/libsdmextension.so|52dec67ba32bf1d41b85d6d964d2058285f556e0
 vendor/lib64/libtinyxml2_1.so|92101861d95cbdf9625d192d0b2295baa5960b68
 
+# Graphics (Vulkan) - from LA.UM.9.6.2.r1-04200-89xx.0
+vendor/lib/hw/vulkan.adreno.so|ba64513dffc8700f80553a184c01d624fd8ea6be
+vendor/lib64/hw/vulkan.adreno.so|f4a2bac57b55790f736adb53ffb4424d518be16b
+
 # Adreno 3xx GPU Firmwares - from ASUS X00PD QKQ1.191002.002.WW_Phone-17.00.2003.23-20200401
 vendor/firmware/a300_pfp.fw|899dbfad4812084971cfc1ff30f06a4b45c2d34c
 vendor/firmware/a300_pm4.fw|94529206b45b6e9f6ed30dadabe4244a88a60975
