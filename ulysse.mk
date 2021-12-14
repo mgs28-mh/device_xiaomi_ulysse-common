@@ -6,6 +6,9 @@
 
 $(call inherit-product, vendor/xiaomi/ulysse-common/ulysse-common-vendor.mk)
 
+# APEX
+OVERRIDE_PRODUCT_COMPRESSED_APEX := false
+
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay-lineage
