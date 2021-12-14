@@ -545,7 +545,9 @@ PRODUCT_COPY_FILES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH) \
-    hardware/xiaomi
+    hardware/xiaomi \
+    hardware/google/interfaces \
+    hardware/google/pixel
 
 # Inherit XiaomiParts
 $(call inherit-product, vendor/xiaomi/part/part.mk)
