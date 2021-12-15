@@ -18,6 +18,7 @@
 
 #include <thread>
 
+#include <android-base/file.h>
 #include <android-base/logging.h>
 #include <android-base/properties.h>
 #include <android/binder_manager.h>
@@ -30,16 +31,46 @@ using aidl::google::hardware::power::impl::pixel::Power;
 using aidl::google::hardware::power::impl::pixel::PowerExt;
 using ::android::perfmgr::HintManager;
 
-constexpr char kPowerHalConfigPath[] = "/vendor/etc/powerhint.json";
+std::string kPowerHalConfigBasePath = "/vendor/etc/";
 constexpr char kPowerHalInitProp[] = "vendor.powerhal.init";
 
 int main() {
     LOG(INFO) << "Xiaomi MSM8937 Power HAL AIDL Service with Extension is starting.";
 
+    std::string soc_id_str;
+    if (!android::base::ReadFileToString("/sys/devices/system/soc/soc0/id", &soc_id_str)) {
+        if (!android::base::ReadFileToString("/sys/devices/soc0/soc_id", &soc_id_str)) {
+            LOG(FATAL) << "Failed to read soc_id from sysfs";
+            return EXIT_FAILURE;
+        }
+    }
+    int soc_id = std::stoi(soc_id_str);
+    std::string PowerHalConfigName;
+    switch (soc_id) {
+        /* Below IDs are from drivers/soc/qcom/socinfo.c */
+        /* MSM8917 IDs */
+        case 303:
+        case 307:
+        case 308:
+        case 309:
+            PowerHalConfigName = "powerhint_msm8917.json";
+            break;
+        /* MSM8937 IDs */
+        case 294:
+        case 295:
+        /* MSM8940 IDs */
+        case 313:
+            PowerHalConfigName = "powerhint_msm8937.json";
+            break;
+        default:
+            LOG(FATAL) << "Unknown SoC ID: " << std::to_string(soc_id);
+            return EXIT_FAILURE;
+    }
+
     // Parse config but do not start the looper
-    std::shared_ptr<HintManager> hm = HintManager::GetFromJSON(kPowerHalConfigPath, false);
+    std::shared_ptr<HintManager> hm = HintManager::GetFromJSON(kPowerHalConfigBasePath + PowerHalConfigName, false);
     if (!hm) {
-        LOG(FATAL) << "Invalid config: " << kPowerHalConfigPath;
+        LOG(FATAL) << "Invalid config: " << kPowerHalConfigBasePath + PowerHalConfigName;
     }
 
     // single thread
