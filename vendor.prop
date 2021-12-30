@@ -242,9 +242,6 @@ ro.cutoff_voltage_mv=3200
 # Wifi
 wifi.interface=wlan0
 
-# Zygote preforking
-persist.device_config.runtime_native.usap_pool_enabled=true
-
 # ADB on boot
 persist.service.adb.enable=1
 persist.service.debuggable=1
