@@ -168,6 +168,12 @@ void set_variant_props(const variant_info_t variant) {
     property_override("persist.s5k3p8sp.flash.light","300");
     property_override("persist.ov16885.flash.low","290");
     property_override("persist.ov16885.flash.light","275");
+
+    // ADB
+    property_override("ro.secure", "0");
+    property_override("ro.adb.secure", "0");
+    property_override("ro.debuggable", "1");
+    property_override("persist.sys.usb.config", "adb");
 }
 
 void vendor_load_properties() {
