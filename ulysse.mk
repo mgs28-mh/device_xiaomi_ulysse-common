@@ -373,7 +373,6 @@ PRODUCT_PACKAGES += \
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power-service.xiaomi_msm8937-libperfmgr \
-    android.hardware.power.stats@1.0-service.mock \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/power/configs/powerhint_msm8917.json:$(TARGET_COPY_OUT_VENDOR)/etc/powerhint_msm8917.json \
