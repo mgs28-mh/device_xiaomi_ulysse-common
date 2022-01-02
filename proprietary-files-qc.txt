@@ -58,6 +58,14 @@ system_ext/lib64/com.qualcomm.qti.ant@1.0.so|7fffcdca309796183708d9e345d3cd97461
 system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
 system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
+# Bluetooth (audio) - from LA.UM.9.6.2.r1-03600-89xx.0
+vendor/lib/hw/audio.bluetooth_qti.default.so|8184989dcd81bc4fffd974b18491b4d608938e9c
+vendor/lib/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|d53d5f5ba35b192d90e4c2c5613207100807d874
+vendor/lib/libbluetooth_audio_session_qti.so|bb3e4af983225626aa6e7b52a23038330b3d0fbd
+vendor/lib64/hw/audio.bluetooth_qti.default.so|e628e65d5c07c81ff96783217f8aaf46702aa992
+vendor/lib64/hw/vendor.qti.hardware.bluetooth_audio@2.0-impl.so|b66dd9afad70780943187074abb332f84c6734d7
+vendor/lib64/libbluetooth_audio_session_qti.so|9260e1e8011a68205474299dbb10ffcfeb34ee3a
+
 # Bluetooth - from LA.UM.9.6.3.r1-04400-89xx.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|458aea3e8d0dec4a3e17fd476f4dea2392edc0e2
 vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc|f4ee3b2da2b08647447869ade86ec63f7340accc
