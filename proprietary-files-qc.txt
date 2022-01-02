@@ -54,9 +54,9 @@ vendor/lib64/soundfx/libqcvirt.so|2aac82b484711a290837a48367eeaa9c334e900e
 system_ext/lib/com.qualcomm.qti.ant@1.0.so|6b8eb143ce3e33e474c7bc28ff3cc58b86c6369c
 system_ext/lib64/com.qualcomm.qti.ant@1.0.so|7fffcdca309796183708d9e345d3cd97461d901d
 
-# Bluetooth (aptX) - from Crosshatch - QQ1A.191205.008
-product/lib64/libaptX_encoder.so:system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
-product/lib64/libaptXHD_encoder.so:system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+# Bluetooth (aptX) - from  Crosshatch - 11/RP1A.201105.002/6869500
+system_ext/lib64/libaptXHD_encoder.so|e13fa70c97caaa24d061678bdee608eb8850a69e
+system_ext/lib64/libaptX_encoder.so|df1c89d7af1bb35808d5fe3496b04ba066c10cbc
 
 # Bluetooth - from LA.UM.9.6.3.r1-04400-89xx.0
 vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti|458aea3e8d0dec4a3e17fd476f4dea2392edc0e2
