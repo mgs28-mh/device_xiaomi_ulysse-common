@@ -76,8 +76,8 @@ static const variant_info_t ugglite_info = {
     .device = "ugglite",
     .marketname = "",
     .model = "Redmi Note 5A",
-    .build_description = "ugglite-user 7.1.2 N2G47H V11.0.3.0.NDFMIXM release-keys",
-    .build_fingerprint = "xiaomi/ugglite/ugglite:7.1.2/N2G47H/V11.0.3.0.NDFMIXM:user/release-keys",
+    .build_description = "raven-user 12 SQ1D.220105.007 8030435 release-keys",
+    .build_fingerprint = "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys",
 };
 
 static const variant_info_t ugg_info = {
@@ -85,8 +85,8 @@ static const variant_info_t ugg_info = {
     .device = "ugg",
     .marketname = "",
     .model = "Redmi Note 5A",
-    .build_description = "ugg-user 7.1.2 N2G47H V11.0.2.0.NDKMIXM release-keys",
-    .build_fingerprint = "xiaomi/ugg/ugg:7.1.2/N2G47H/V11.0.2.0.NDKMIXM:user/release-keys",
+    .build_description = "raven-user 12 SQ1D.220105.007 8030435 release-keys",
+    .build_fingerprint = "google/raven/raven:12/SQ1D.220105.007/8030436:user/release-keys",
 };
 
 static void determine_device()
