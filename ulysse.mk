@@ -5,6 +5,7 @@
 #
 
 $(call inherit-product, vendor/xiaomi/ulysse-common/ulysse-common-vendor.mk)
+$(call inherit-product, vendor/xiaomi/part/part.mk)
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += $(LOCAL_PATH)/overlay
