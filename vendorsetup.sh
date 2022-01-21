@@ -9,4 +9,4 @@ else
 echo "Gabuters clang exist, skipping.."
 fi
 
-git clone https://github.com/Gabuters-Dev/vendor_xiaomi_dirac -b part vendor/xiaomi/part
+git clone https://github.com/Gabuters-Dev/vendor_xiaomi_dirac -b 12 vendor/xiaomi/part
