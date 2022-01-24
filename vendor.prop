@@ -104,9 +104,6 @@ vendor.display.use_smooth_motion=1
 # DRM
 drm.service.enabled=true
 
-# EBPF
-ro.kernel.ebpf.supported=true
-
 # FM
 ro.fm.transmitter=false
 
