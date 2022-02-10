@@ -18,6 +18,8 @@
 <resources>
 
     <!-- the padding of the statusbar -->
-    <dimen name="status_bar_padding_start">25dp</dimen>
-    <dimen name="status_bar_padding_end">10dp</dimen>
+    <dimen name="status_bar_padding_start">20dp</dimen>
+    <dimen name="status_bar_padding_end">9dp</dimen>
+    <dimen name="status_bar_height">26.0dip</dimen>
+
 </resources>
