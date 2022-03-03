@@ -563,4 +563,7 @@
 
     <!-- True if the device supports Sustained Performance Mode -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
+
+    <!-- Whether to select voice/data/sms preference without user confirmation. -->
+    <bool name="config_voice_data_sms_auto_fallback">true</bool>
 </resources>
