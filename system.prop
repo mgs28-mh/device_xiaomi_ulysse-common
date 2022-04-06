@@ -40,6 +40,9 @@ persist.vendor.ims.disableQXDMLogs=1
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
+# Watchdog
+ro.hw_timeout_multiplier=3
+
 # ScalarConfig
 vendor.display.disable_scaler=1
 
