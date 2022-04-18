@@ -40,6 +40,9 @@ persist.vendor.ims.disableQXDMLogs=1
 # Fwk detect
 ro.vendor.qti.va_aosp.support=1
 
+# ScalarConfig
+vendor.display.disable_scaler=1
+
 # Zygote preforking
 persist.device.config.runtime_native.usap_pool_enabled=true
 
