@@ -187,9 +187,7 @@ PRODUCT_PACKAGES += \
     gralloc.msm8937 \
     hwcomposer.msm8937 \
     memtrack.msm8937 \
-    libqdMetaData.vendor \
     liboverlay \
-    libqdMetaData \
     libgenlock \
     libtinyxml \
     libqdMetaData \
@@ -456,10 +454,6 @@ PRODUCT_PACKAGES += \
     android.hardware.thermal@1.0-impl \
     android.hardware.thermal@1.0-service
 
-# TinyXML
-PRODUCT_PACKAGES += \
-    libtinyxml
-
 # vndservicemanager
 PRODUCT_PACKAGES += \
     vndservicemanager
@@ -468,12 +462,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl \
     android.hardware.vibrator@1.0-service
-
-# Whitelisted app
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/qti_whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/qti_whitelist.xml \
-    $(LOCAL_PATH)/configs/permissions/privapp-permissions-qti.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/privapp-permissions-qti.xml \
-    $(LOCAL_PATH)/configs/permissions/telephony_product_privapp-permissions-qti.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/telephony_product_privapp-permissions-qti.xml
 
 # VNDK
 PRODUCT_EXTRA_VNDK_VERSIONS := 28 29 30
