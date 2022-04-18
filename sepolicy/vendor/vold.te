@@ -3,4 +3,4 @@ allow vold same_process_hal_file:file { execute getattr open read };
 allow vold persist_file:dir r_dir_perms;
 allow vold sysfs_mmc_host:file w_file_perms;
 allow vold sysfs_mmc_host:file write;
-
+allow vold cache_block_device:blk_file getattr;
