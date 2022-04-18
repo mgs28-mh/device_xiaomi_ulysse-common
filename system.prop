@@ -43,6 +43,10 @@ ro.vendor.qti.va_aosp.support=1
 # ScalarConfig
 vendor.display.disable_scaler=1
 
+# Skia
+# (b/183612348): Enable skia reduceOpsTaskSplitting
+renderthread.skia.reduceopstasksplitting=true
+
 # Zygote preforking
 persist.device.config.runtime_native.usap_pool_enabled=true
 
