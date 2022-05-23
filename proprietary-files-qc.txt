@@ -638,6 +638,9 @@ system_ext/lib64/libembmsmmparser_lite.so|243fb26fc032b920060708af4e4b3c9b9fd280
 system_ext/lib64/libembmssqlite.so|b76a706caf1b0b354ff95398b17130bc8ddc05b9
 system_ext/lib64/libembmstinyxml.so|5a998ab8d31e76ccf50a962c493d800483e03ebf
 
+# Radio - from LA.QSSI.12.0.r1-05800-qssi.0
+system_ext/framework/qti-telephony-common.jar|fee3a1ee6888cd849ad7b7294e7c50c26ef80ac1
+
 # Radio (IMS) - from LA.UM.9.6.3.r1-04400-89xx.0
 -system_ext/app/imssettings/imssettings.apk|8b47c43d56228dcce93cc8c07c6ceb08cb3d2fe5
 -system_ext/app/uceShimService/uceShimService.apk|e7222c1d9c4fa93418d692a97ee36562e4e1cc94
