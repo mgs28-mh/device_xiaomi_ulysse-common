@@ -32,9 +32,9 @@ android.hardware.gnss@1.1
 android.hardware.gnss@2.0
 android.hardware.gnss@2.1
 android.hardware.gnss@3.0
-android.hardware.keymaster-V2-ndk_platform
+android.hardware.keymaster-V2-ndk
 android.hardware.keymaster@3.0
-android.hardware.power-V1-ndk_platform
+android.hardware.power-V1-ndk
 android.hardware.power@1.0
 android.hardware.power@1.1
 android.hardware.power@1.2
