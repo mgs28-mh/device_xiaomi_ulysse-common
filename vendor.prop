@@ -81,7 +81,6 @@ debug.hwui.use_buffer_age=false
 debug.mdpcomp.logs=0
 debug.sf.disable_backpressure=1
 debug.sf.enable_hwc_vds=0
-debug.renderengine.backend=threaded
 debug.sf.hw=0
 debug.sf.latch_unsignaled=0
 debug.sf.recomputecrop=0
