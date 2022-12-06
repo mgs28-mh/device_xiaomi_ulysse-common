@@ -534,13 +534,6 @@
     <!-- True if the device supports Sustained Performance Mode -->
     <bool name="config_sustainedPerformanceModeSupported">true</bool>
 
-    <!-- Whether to cancel fingerprint operation if not idle -->
-    <bool name="config_fpCancelIfNotIdle">true</bool>
-
-    <!-- Whether to cleanup fingerprints upon connection to the daemon and when
-         user switches -->
-    <bool name="config_cleanupUnusedFingerprints">false</bool>
-
     <!-- List of comma separated package names for 
     which we the system will not show crash, ANR,
          etc. dialogs. --> 
