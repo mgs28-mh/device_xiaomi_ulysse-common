@@ -10,8 +10,7 @@ LOCAL_MODULE_TAGS := optional
 LOCAL_CFLAGS := -Werror \
                    -g -O0  -Wno-compound-token-split-by-macro
 
-LOCAL_C_INCLUDES := $(LOCAL_PATH)/../qexif \
-                    $(LOCAL_PATH)/../../qcom-caf/media/mm-core/inc
+LOCAL_C_INCLUDES := $(LOCAL_PATH)/../qexif
 
 LOCAL_HEADER_LIBRARIES := libutils_headers
 LOCAL_HEADER_LIBRARIES += media_plugin_headers
