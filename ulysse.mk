@@ -222,10 +222,7 @@ PRODUCT_PACKAGES += \
     GalleryGo
 
 # GPS
-include $(LOCAL_PATH)/gps/gps_vendor_product.mk
-
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/gps/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+include $(LOCAL_PATH)/configs/gps/gps_vendor_product.mk
 
 # Healthd
 PRODUCT_PACKAGES += \
