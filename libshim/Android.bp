@@ -59,7 +59,7 @@ cc_library_shared {
 }
 
 cc_library {
-    name: "libshim_dpmframework",
+    name: "libshims_dpmd ",
     srcs: [
         "dpm/strdup16to8.cpp",
         "dpm/strdup8to16.cpp",

@@ -151,6 +151,14 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0
 
+# Camera (Shims)
+PRODUCT_PACKAGES += \
+    libshims_android \
+    libshims_binder \
+    libshims_dpmd \
+    libshims_ui \
+    libwui
+
 # Charger
 include $(LOCAL_PATH)/rootdir/charger/charger.mk
 
