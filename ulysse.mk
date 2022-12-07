@@ -146,12 +146,7 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-service \
     camera.msm8937 \
     libmm-qcamera \
-    libshim_camera \
     GoogleCameraGo
-
-PRODUCT_PACKAGES += \
-    libandroid_shim \
-    libwui
 
 PRODUCT_PACKAGES += \
     android.hardware.camera.common@1.0
@@ -239,8 +234,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     ims-ext-common \
     ims_ext_common.xml \
-    libui_shim \
-	libims-shim
 
 # Inherit several Android Go Configurations(Beneficial for everyone, even on non-Go devices)
 PRODUCT_USE_PROFILE_FOR_BOOT_IMAGE := true
@@ -407,11 +400,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf \
-
-# Shims
-PRODUCT_PACKAGES += \
-    libshims_dpmd \
-    libshim_wfd
 
 # Thermal
 PRODUCT_COPY_FILES += \
